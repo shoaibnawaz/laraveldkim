@@ -1,5 +1,7 @@
 laraveldkim
 ===========
+This package is the fork of [academe/laraveldkim](https://github.com/academe/laraveldkim) and being seperatly maintained for urgent release to packagist.
+This package mainly fixs the event dispatcher support in Mailer for Laravel 4.2
 
 Sign all outgoing emails in Laravel 4 with a DKIM signature.
 

@@ -4,12 +4,12 @@
     "license": "MIT",
     "description": "A Laravel plugin to sign all outgoing emails using DKIM from within the application.",
     "keywords": ["laravel", "dkim", "email", "spam"],
-    "homepage": "https://github.com/academe/laraveldkim",
+    "homepage": "https://github.com/shoaibnawaz/laraveldkim",
     "authors": [
         {
-            "name": "Jason Judge",
-            "email": "jason.judge@academe.co.uk",
-            "homepage": "http://www.academe.co.uk/",
+            "name": "Shoaib Nawaz",
+            "email": "shuaibnawaz@gmail.com",
+            "homepage": "https://www.owcareers.com",
             "role": "Developer"
         }
     ],
@@ -18,6 +18,6 @@
         "laravel/framework": "4.2.*"
     },
     "autoload": {
-	"psr-4": {"Academe\\LaravelDkim\\": "src/"}
+	"psr-4": {"Shoaibnawaz\\LaravelDkim\\": "src/"}
     }
 }
