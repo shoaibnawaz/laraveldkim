@@ -1,6 +1,6 @@
 {
     "name": "shoaibnawaz/laraveldkim",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "license": "MIT",
     "description": "A Laravel plugin to sign all outgoing emails using DKIM from within the application.",
     "keywords": ["laravel", "dkim", "email", "spam"],
@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "laravel/framework": "4.*"
+        "laravel/framework": "4.2.*"
     },
     "autoload": {
 	"psr-4": {"Academe\\LaravelDkim\\": "src/"}
