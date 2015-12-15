@@ -1,4 +1,4 @@
-<?php namespace Academe\LaravelDkim;
+<?php namespace Shoaibnawaz\LaravelDkim;
 
 /**
  * Notes:
@@ -59,4 +59,3 @@ class MailServiceProvider extends CoreMailServiceProvider {
 		});
 	}
 }
-

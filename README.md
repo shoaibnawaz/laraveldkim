@@ -20,12 +20,12 @@ Why would you use this?
 -----------------------
 
 Most applications need to send out mail. To look as little like SPAM as possible, there are a number of
-techniques that should be applied to sent mail. One is called 
+techniques that should be applied to sent mail. One is called
 [DomainKeys Identified Mail](http://www.dkim.org/) (DKIM).
 
 DKIM works using a public/private key pair. The public key is stored in a TEXT record of the domain sending
-the email, so all recipients (mail servers) can see that. The private key is kept secret and used to 
-sign the outgoing message. The signature is a hash of the message content and some headers, and adds the hash to the 
+the email, so all recipients (mail servers) can see that. The private key is kept secret and used to
+sign the outgoing message. The signature is a hash of the message content and some headers, and adds the hash to the
 top of the headers. Only someone with the private key can sign it in a way that can be validated by the
 public key. Google, Yahoo, Hotmail all do this check. Any tampering of the message en-route will also break
 the signature and so can be rejected at the destination.
@@ -46,7 +46,7 @@ This package was written to fill a specific need, so may not be as flexible as y
 submit pull requests if you have any improvements.
 
 The package makes the assumption that you are using the built-in Laravel email provider. If you are using
-other email packages such as [laravel-mailgun](https://github.com/killswitch/laravel-mailgun) then I 
+other email packages such as [laravel-mailgun](https://github.com/killswitch/laravel-mailgun) then I
 don't know it this will work (I don't know if other mail packages sit on top of Laravel's mail provider
 or replace it). Try it and let me know how it goes.
 
@@ -81,7 +81,7 @@ Include the package in your application
 Add a requirement to your project's composer.json
 
     "require": {
-        "academe/laraveldkim": "1.*"
+        "shoaibnawaz/laraveldkim": "1.*"
     },
 
 Add your private key settings
@@ -105,13 +105,13 @@ Your signing key details need to be added to the laravel application config. Add
 
 Note that everything between the two instances of `ENDDKIMKEY` must be right up to the start of the line.
 You may be able to put the RSA key more easily into a dot-file (e.g. `.mail.prod.php`) for more security.
-See [Laravel: Protecting Sensitive Configuration](http://laravel.com/docs/configuration#protecting-sensitive-configuration) 
+See [Laravel: Protecting Sensitive Configuration](http://laravel.com/docs/configuration#protecting-sensitive-configuration)
 for more details on dot file support.
 Another approach may be to read the key from a text file in the config file and return that.
 The "mail.dkim.private_key" needs to be a string containing the full private key, with each line
 terminated with a newline character. It may be safer, if stored as a PHP string, to concatenate each
 line of the key in double-quotes with explicit embedded newlines, like this:
-`"-----BEGIN RSA PRIVATE KEY-----\n" . "line 1\n" . "line 2\n" etc.`. Assuming the end-of-line 
+`"-----BEGIN RSA PRIVATE KEY-----\n" . "line 1\n" . "line 2\n" etc.`. Assuming the end-of-line
 terminators in a source file are \n never was a great idea, though [PSR-2 does make it clear](http://www.php-fig.org/psr/psr-2/) (section 2.2) that lines MUST be terminated with a \n.
 
 
@@ -133,7 +133,7 @@ The `providers` array will have this entry:
 
 Comment that out and replace it with this entry:
 
-    'Academe\LaravelDkim\MailServiceProvider',
+    'Shoaibnawaz\LaravelDkim\MailServiceProvider',
 
 That's it. Your emails should now be signed with DKIM. You can check the headers in the source of emails that
 your application sends out and you should see the DKIM signature in there. It will look something like this:
